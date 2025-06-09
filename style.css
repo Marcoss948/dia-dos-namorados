@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+  :root {
+    --color-bg: #ffffff;
+    --color-primary: ##A651A0;
+    --color-primary-dark: #5C3271;
+    --color-text-primary: #5C3271;
+    --color-text-secondary: #6b7280;
+    --color-shadow: rgba(201, 79, 79, 0.15);
+    --radius: 0.75rem;
+    --spacing-lg: 4rem;
+    --spacing-md: 2rem;
+    --spacing-sm: 1rem;
+    --max-width: 1200px;
+    --font-sans: 'Poppins', sans-serif;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--max-width);
+  }
+
+  header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    padding: var(--spacing-sm) 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    display: flex;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-weight: 800;
+    font-size: 48px;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  main {
+    width: 100%;
+    padding-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  section {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 15px var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero {
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .hero h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    font-weight: 500;
+  }
+
+  .photos {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .photo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    transition: transform 0.3s ease;
+    cursor: default;
+    background-color: #f0e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-weight: 800;
+    font-size: 1.5rem;
+    user-select: none;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--color-primary-dark);
+  }
+
+  .content-section h2 {
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    font-size: 48px;
+    margin: 0 0 1rem 0;
+  }
+
+  .content-section p {
+    color: var(--color-text-secondary);
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .section-photos {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: nowrap;
+    margin-top: var(--spacing-md);
+  }
+
+  .section-photos img {
+    width: calc(50% - var(--spacing-sm));
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px var(--color-shadow);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: default;
+    aspect-ratio: 4 / 3;
+    max-height: 220px;
+  }
+
+  .section-photos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--color-primary-dark);
+  }
+
+  footer {
+    width: 100%;
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 36px;
+    }
+    .hero h2 {
+      font-size: 32px;
+    }
+    .hero p {
+      font-size: 16px;
+    }
+    .photo {
+      width: 140px;
+      height: 140px;
+    }
+    .section-photos {
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    .section-photos img {
+      width: 100%;
+      max-height: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding: 3rem 1.25rem;
+    }
+    .hero h2 {
+      font-size: 24px;
+    }
+    header h1 {
+      font-size: 28px;
+    }
+    .photo {
+      width: 120px;
+      height: 120px;
+    }
+  }
